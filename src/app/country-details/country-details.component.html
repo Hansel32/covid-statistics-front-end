@@ -6,7 +6,7 @@
       </div>
 
       <div fxLayout="row" fxLayoutAlign="center">
-        <h2 style="margin-top:100px" class="my-primary-text">Nombre del país</h2>
+        <h2 style="margin-top:100px" class="my-primary-text">{{ this.countryData.country }}</h2>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="center">
@@ -27,18 +27,18 @@
         </div>
 
         <div fxLayout="row" fxLayoutAlign="center">
-          <h4>Covid-19 statistics in Country</h4>
+          <h4>Covid-19 statistics in {{ this.countryData.country }}</h4>
         </div>
       </div>
 
       <div fxLayout="column" fxLayoutAlign="center" style="margin-top:100px">
         <mat-list>
-          <mat-list-item> Continente: </mat-list-item>
-          <mat-list-item> población: </mat-list-item>
-          <mat-list-item> casos activos: </mat-list-item>
-          <mat-list-item> casos críticos: </mat-list-item>
-          <mat-list-item> casos recuperados: </mat-list-item>
-          <mat-list-item> Muertes: </mat-list-item>
+          <mat-list-item> Continente: {{ this.countryData.continent }} </mat-list-item>
+          <mat-list-item> población: {{ this.countryData.population | number }}</mat-list-item>
+          <mat-list-item> casos activos: {{ this.countryData.cases.active | number}}</mat-list-item>
+          <mat-list-item> casos críticos: {{ this.countryData.cases.critical | number}}</mat-list-item>
+          <mat-list-item> casos recuperados: {{ this.countryData.cases.recovered | number}}</mat-list-item>
+          <mat-list-item> Muertes: {{ this.countryData.deaths.total | number}} </mat-list-item>
         </mat-list>
       </div>
     </div>

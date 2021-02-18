@@ -5,6 +5,7 @@ import { RegisterComponent } from '../register/register.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import {CountryDetailsComponent} from '../country-details/country-details.component';
 import {CasesManagementComponent} from '../cases-management/cases-management.component';
+import {AddCountryComponent} from '../country-details/components/add-country/add-country.component';
 
 
 const routes: Routes = [
@@ -18,12 +19,15 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
   }, {
-    path: 'country-details',
+    path: 'country-details/:id',
     component: CountryDetailsComponent,
   }, {
     path: 'cases-management',
     component: CasesManagementComponent,
-  },
+  }, {
+    path: 'country/add-country',
+    component: AddCountryComponent,
+  }
 ];
 
 @NgModule({

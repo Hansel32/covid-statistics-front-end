@@ -12,13 +12,18 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { CasesManagementComponent } from './cases-management/cases-management.component';
 import {MatOptionModule} from '@angular/material/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {InterceptorService} from './services/interceptor.service';
+import {CommonModule} from '@angular/common';
+import { AddCountryComponent } from './country-details/components/add-country/add-country.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterComponent,
     DashboardComponent,
     CountryDetailsComponent,
-    CasesManagementComponent
+    CasesManagementComponent,
+    AddCountryComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +48,12 @@ import {HttpClientModule} from '@angular/common/http';
     MatListModule,
     MatOptionModule,
     MatSelectModule,
+    MatGridListModule,
+    MatCardModule,
     HttpClientModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

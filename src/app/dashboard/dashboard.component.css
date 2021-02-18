@@ -1,3 +1,21 @@
 p {
   text-align: center;
 }
+
+.continent-images {
+  color: #1976d2;
+}
+
+/* Colors */
+.danger {
+  color: red;
+}
+
+.full-width {
+  width: 83%;
+  margin-right: 10px;
+}
+
+.title {
+  text-align: center;
+}
