@@ -1,7 +1,7 @@
 export interface ICountry {
-  continent: '';
-  country: '';
-  population: '';
+  continent: string;
+  country: string;
+  population: string;
   cases: {
     '1M_pop': number;
     active: number;

@@ -39,6 +39,7 @@
           <mat-list-item> casos críticos: {{ this.countryData.cases.critical | number}}</mat-list-item>
           <mat-list-item> casos recuperados: {{ this.countryData.cases.recovered | number}}</mat-list-item>
           <mat-list-item> Muertes: {{ this.countryData.deaths.total | number}} </mat-list-item>
+          <mat-list-item> Nuevos: +{{ this.countryData.cases.new | number}} </mat-list-item>
         </mat-list>
       </div>
     </div>
